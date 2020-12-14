@@ -1,0 +1,46 @@
+<script>
+  async function {{ajax_function_name}}(func, args) {
+    const request = new Request(
+      window.location,
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          func: func,
+          args: args
+        }),
+        headers: {
+          'X-CSRFToken': "{{csrf_token}}"
+        }
+      }
+    )
+    const res = await fetch(request)
+    const data = await res.json()
+
+    if (res.status >= 200 && res.status < 300) {
+      return data.return_value
+    } else if (res.status >= 400 && res.status < 500) {
+      // Bad request
+      throw {
+        'response': res,
+        'status': res.status,
+        'errors': data.errors
+      }
+    } else if (res.status === 500) {
+      throw {
+        'response': res,
+        'status': res.status,
+        'errors': ['Internal Server Error']
+      }
+    } else {
+      throw({
+        'response': res,
+        'status': res.status,
+        'errors': ['Unexpected response']
+      })
+    }
+  }
+
+  {% for method, params in methods.items %}
+    async function {{ method }}({ {{ params }} }) { return await ajax('{{ method }}', { {{ params }} }) }
+  {% endfor %}
+</script>

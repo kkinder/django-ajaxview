@@ -1,0 +1,8 @@
+site_name: Django AjaxView
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Usage: usage.md
+  - Changelog: changelog.md
+
+theme: readthedocs
