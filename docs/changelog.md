@@ -6,6 +6,6 @@ Minor versions are intended to be backwards compatible. For example, `1.9.0` wou
 
 ## Release Log
 
-### 2020-12-13: 1.0.0
+### 2020-12-13: 1.0.1
 
 First public release.

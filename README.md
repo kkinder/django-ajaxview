@@ -14,4 +14,4 @@ class MyController(AjaxView):
 const message = await greetings({name: 'Ken'})
 ```
 
-Enjoy.
+See [documentation for more](https://django-ajaxview.readthedocs.io/)
