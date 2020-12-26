@@ -20,4 +20,4 @@ jobs:
           python -V
           pipenv install
       - name: Run tests
-        run: python ajaxview/manage.py test
+        run: python manage.py test
