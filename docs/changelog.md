@@ -9,3 +9,7 @@ Minor versions are intended to be backwards compatible. For example, `1.9.0` wou
 ### 2020-12-13: 1.0.1
 
 First public release.
+
+### 2020-12-26: 1.0.3
+
+Fixed CI. This was the first version uploaded to PyPi automatically. No fucntional changes.
