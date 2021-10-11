@@ -99,7 +99,7 @@ class AjaxView(TemplateView, metaclass=AjaxViewMeta):
         if not func:
             return self.render_bad_request('No func specified')
 
-        if not arguments:
+        if arguments is None:
             return self.render_bad_request('No args specified')
 
         if not isinstance(arguments, dict):

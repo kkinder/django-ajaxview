@@ -41,6 +41,10 @@
   }
 
   {% for method, params in methods.items %}
-    async function {{ method }}({ {{ params }} }) { return await ajax('{{ method }}', { {{ params }} }) }
+    {% if params %}
+      async function {{ method }}({ {{ params }} }) { return await ajax('{{ method }}', { {{ params }} }) }
+    {% else %}
+      async function {{ method }}() { return await ajax('{{ method }}', {}) }
+    {% endif %}
   {% endfor %}
 </script>
