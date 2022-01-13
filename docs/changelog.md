@@ -18,6 +18,6 @@ Fixed CI. This was the first version uploaded to PyPi automatically. No function
 
 Fixed no argument functions causing errors
 
-### 2022-01-13: 1.0.5
+### 2022-01-13: 1.0.6
 
 Fixed base classes not working
