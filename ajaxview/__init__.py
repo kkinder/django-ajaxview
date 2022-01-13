@@ -23,6 +23,16 @@ class AjaxViewMeta(type):
         ajax_methods = {}
         ajax_methods_js = {}  # Handy for rendering in templates
         ajax_datetime_params = {}
+
+        # Load stuff from super-classes
+        for base_class in bases:
+            if hasattr(base_class, 'ajax_methods'):
+                ajax_methods.update(base_class.ajax_methods)
+            if hasattr(base_class, 'ajax_methods_js'):
+                ajax_methods_js.update(base_class.ajax_methods_js)
+            if hasattr(base_class, 'ajax_datetime_params'):
+                ajax_datetime_params.update(base_class.ajax_datetime_params)
+
         for k, v in dct.items():
             if callable(v) and getattr(v, 'is_ajax', False):
                 sig = inspect.signature(v)

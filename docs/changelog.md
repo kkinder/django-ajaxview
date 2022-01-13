@@ -12,8 +12,12 @@ First public release.
 
 ### 2020-12-26: 1.0.3
 
-Fixed CI. This was the first version uploaded to PyPi automatically. No fucntional changes.
+Fixed CI. This was the first version uploaded to PyPi automatically. No functional changes.
 
 ### 2021-10-11: 1.0.4
 
 Fixed no argument functions causing errors
+
+### 2022-01-13: 1.0.5
+
+Fixed base classes not working
